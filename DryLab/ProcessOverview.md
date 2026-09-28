@@ -22,7 +22,7 @@ GAII_11 - shotgun from extracellular Libraries
 #Untar the files
 tar -xvf <file>
 
-#Make SampleSheet.csv
+#Make 240909_SampleSheet.csv
 [Header],,,
 IEMFileVersion,4,,
 Investigator Name,Dawn,,
@@ -77,17 +77,18 @@ module purge
 module use /apps/modules/all
 module load bcl2fastq2/2.19.1
 
-INDIR=/hpcfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun
-OUTDIR=/gpfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/DEMUX/L002/2307_shotgun
+INDIR==/gpfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/
+OUTDIR=/gpfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/fastqs/
 
 bcl2fastq \
---runfolder-dir /hpcfs/groups/acad_users/NGS/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/ \
---output-dir /hpcfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/ \
+--runfolder-dir ${INDIR} \
+--output-dir ${OUTDIR} \
 --sample-sheet /hpcfs/groups/acad_users/NGS/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/SampleSheet_Lanes_2_3_samples.csv \
 --ignore-missing-positions \
 --ignore-missing-controls \
 --ignore-missing-filter \
---ignore-missing-bcls 
+--ignore-missing-bcls
+
 ```
 Perform subset index check
 ```
