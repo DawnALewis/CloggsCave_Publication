@@ -57,8 +57,10 @@ Lane,Sample_ID,Sample_Name,I7_Index_ID,index
 3,index19,MegaMarsupCapture_19,GAII_Indexing_19,GAATCTC
 3,index20,MegaShotgun,GAII_Indexing_20,CATGCTC
 3,index11,Mega_ALL_resequence,GAII_Indexing_11,AACTCCG
-
-#Run BCL2fastq2.sh
+```
+##### Run bcl2fastq2.sh
+```
+#bcl2fastq2.sh
 #!/bin/bash
 #SBATCH -p icelake
 #SBATCH -N 1
@@ -86,7 +88,9 @@ bcl2fastq \
 --ignore-missing-controls \
 --ignore-missing-filter \
 --ignore-missing-bcls 
-
+```
+Perform subset index check
+```
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 cd /hpcfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/find_index
 
@@ -94,9 +98,10 @@ Performed subset index check on the following files:
 2307_shotgun_resequence_S2_L003_R*_001.fastq.gz - OK
 Mega_ALL_resequence_S6_L003_R*_001.fastq.gz - ok
 
- 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#####AdapterRemoval
+
+ ```
+##### Demultiplex with AdapterRemover
+```
 cd /hpcfs/users/a1867445/240909_INO_BLlDLeLTaSRaYSo_CloggsCaveResequenceIndoHumanCapDingoShotgun/
 
 #####adapterRemoval.sh
@@ -133,5 +138,7 @@ AdapterRemoval  --file1 ${INDIR}/2307_shotgun_resequence_S2_L002_R2_001.fastq.gz
 ```
 
 
-### Make inputfile_complete.sh
+##### Make inputfile
+```
+#Make inputfile_complete.sh
 
