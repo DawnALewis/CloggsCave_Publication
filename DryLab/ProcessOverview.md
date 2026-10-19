@@ -139,7 +139,9 @@ AdapterRemoval  --file1 ${INDIR}/2307_shotgun_resequence_S2_L002_R2_001.fastq.gz
 ```
 
 
-##### Make inputfile
+##### Make input file/s
 ```
-#Make inputfile_complete.sh
-
+#Make input_all.sh
+cat > input_all.tsv <<'EOF' 
+Sample_Name Library_ID Lane Colour_Chemistry SeqType Organism Strandedness UDG_Treatment R1 R2 BAM 
+EOF 
